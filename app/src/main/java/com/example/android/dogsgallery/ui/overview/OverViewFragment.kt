@@ -1,7 +1,6 @@
 package com.example.android.dogsgallery.ui.overview
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.android.dogsgallery.R
 import com.example.android.dogsgallery.data.Result
 import com.example.android.dogsgallery.databinding.FragmentOverViewBinding
 

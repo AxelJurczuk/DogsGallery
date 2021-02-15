@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import com.example.android.dogsgallery.R
 import com.example.android.dogsgallery.databinding.FragmentDetailsBinding
 import com.squareup.picasso.Picasso
 
@@ -32,6 +33,8 @@ class DetailsFragment : Fragment() {
            .fit()
            .centerCrop()
            .into(binding.ivDog)
+        binding.tvTitle.setText(R.string.this_is_a_really_cute_dog)
+        binding.tvDescription.setText(R.string.dogs_description)
     }
     override fun onDestroyView() {
         super.onDestroyView()

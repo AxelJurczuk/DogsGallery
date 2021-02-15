@@ -31,7 +31,7 @@ private val listener:OnItemClick)
     override fun onBindViewHolder(holder: DogsViewHolder, position: Int) {
         val item = dogsList[position]
         holder.dogName.text = "Dog ${position+1}"
-        holder.dogDescription.text = "Really cute dog"
+        holder.dogDescription.setText(R.string.really_cute_dog)
         Picasso.get()
             .load(item)
             .fit()

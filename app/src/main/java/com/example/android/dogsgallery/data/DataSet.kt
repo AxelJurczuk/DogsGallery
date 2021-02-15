@@ -1,7 +1,6 @@
 package com.example.android.dogsgallery.data
 
-import android.util.Log
-import android.widget.Toast
+
 import com.example.android.dogsgallery.model.DogsResponse
 import retrofit2.Call
 import retrofit2.Callback
