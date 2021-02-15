@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/overViewFragment"
         android:name="com.example.android.dogsgallery.ui.overview.OverViewFragment"
-        android:label="fragment_over_view"
+        android:label=""
         tools:layout="@layout/fragment_over_view" >
         <action
             android:id="@+id/action_overViewFragment_to_detailsFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.android.dogsgallery.ui.detail.DetailsFragment"
-        android:label="fragment_details"
+        android:label=""
         tools:layout="@layout/fragment_details" >
         <argument
             android:name="picture_url"
