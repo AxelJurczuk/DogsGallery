@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.dogsgallery.R
 import com.squareup.picasso.Picasso
 
-class DogsAdapter(private val context: Context): RecyclerView.Adapter<DogsAdapter.DogsViewHolder>() {
+class DogsAdapter(private val context: Context,
+private val listener:OnItemClick)
+    : RecyclerView.Adapter<DogsAdapter.DogsViewHolder>() {
 
     var dogsList:List<String> = emptyList()
 
@@ -35,10 +37,18 @@ class DogsAdapter(private val context: Context): RecyclerView.Adapter<DogsAdapte
             .fit()
             .centerCrop()
             .into(holder.dogImage)
+
+        holder.itemView.setOnClickListener {
+            listener.onItemClickListener(position)
+        }
     }
 
     override fun getItemCount(): Int {
         return dogsList.size
+    }
+
+    interface OnItemClick{
+        fun onItemClickListener(position: Int)
     }
 
 }

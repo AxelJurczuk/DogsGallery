@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.dogsgallery.R
@@ -47,7 +48,14 @@ class OverViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter= DogsAdapter(requireContext())
+        adapter= DogsAdapter(requireContext(), object : DogsAdapter.OnItemClick {
+            override fun onItemClickListener(position: Int) {
+                val dogPicture = adapter.dogsList[position]
+                val action = OverViewFragmentDirections.actionOverViewFragmentToDetailsFragment(dogPicture)
+                findNavController().navigate(action)
+            }
+
+        })
         val recyclerView = binding.recyclerView
         recyclerView.adapter= adapter
         recyclerView.layoutManager= GridLayoutManager(requireContext(),2)
