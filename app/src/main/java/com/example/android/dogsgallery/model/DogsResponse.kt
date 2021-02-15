@@ -5,4 +5,4 @@ import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Dogs(@Json(name="message") val dogsList:List<String>):Parcelable
+data class DogsResponse(@Json(name="message") val dogsList:List<String>):Parcelable

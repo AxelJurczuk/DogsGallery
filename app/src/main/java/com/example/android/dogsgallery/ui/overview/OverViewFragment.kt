@@ -15,13 +15,16 @@ import com.example.android.dogsgallery.data.Result
 
 class OverViewFragment : Fragment() {
 
-    val viewModel: DogsViewModel by viewModels()
+    private val viewModel: DogsViewModel by viewModels()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         val dogsObserver = Observer<Result>{
             when(it) {
-                is Result.Success-> Log.i("dogsList", it.list.toString())
+                is Result.Success -> {
+                    Log.i("dogsList", it.list.toString())
+                    Toast.makeText(requireContext(), "fragment working", Toast.LENGTH_SHORT).show()
+                }
                 is Result.Failure -> Toast.makeText(requireContext(),
                         "Something went wrong",
                         Toast.LENGTH_SHORT).show()
