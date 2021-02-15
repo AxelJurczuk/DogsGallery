@@ -22,10 +22,8 @@ class DataSet {
         api.getDogsList().enqueue(object : Callback<DogsResponse> {
             override fun onResponse(call: Call<DogsResponse>, response: Response<DogsResponse>) {
                 if (response.isSuccessful) {
-                    Log.i ("dogs",response.body().toString())
                     val dogsResponse = response.body() ?: return
-                    callback.onResult(Result.Success(dogsResponse.dogsList))
-                    Log.i("dogs", dogsResponse.dogsList.toString())
+                    callback.onResult(Result.Success(dogsResponse.message))
 
                 } else {
                     callback.onResult(Result.Failure("error"))
