@@ -26,6 +26,7 @@ class OverViewFragment : Fragment() {
         _binding = FragmentOverViewBinding.inflate(inflater, container, false)
         val view = binding.root
         val dogsObserver = Observer<Result>{
+            binding.progressBar.visibility= View.GONE
             when(it) {
                 is Result.Success -> {
                     adapter.dogsList = it.list

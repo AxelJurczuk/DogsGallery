@@ -25,7 +25,7 @@ class DataSet {
                     callback.onResult(Result.Success(dogsResponse.message))
 
                 } else {
-                    callback.onResult(Result.Failure("error"))
+                    callback.onResult(Result.Failure("Something went wrong"))
                 }
             }
 
