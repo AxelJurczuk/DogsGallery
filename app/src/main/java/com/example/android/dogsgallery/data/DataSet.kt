@@ -22,7 +22,7 @@ class DataSet {
             override fun onResponse(call: Call<DogsResponse>, response: Response<DogsResponse>) {
                 if (response.isSuccessful) {
                     val dogsResponse = response.body() ?: return
-                    callback.onResult(Result.Success(dogsResponse.dogList))
+                    callback.onResult(Result.Success(dogsResponse.message))
 
                 } else {
                     callback.onResult(Result.Failure("Something went wrong"))
